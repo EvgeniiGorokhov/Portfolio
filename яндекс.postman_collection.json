@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "89f37a73-af83-4037-837c-b4c10ed44700",
+		"name": "яндекс",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18344087"
+	},
+	"item": [
+		{
+			"name": "ya.ru",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ya.ru",
+					"host": [
+						"ya",
+						"ru"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список складов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/v1/warehouses",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список наборов в карточке",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/v1/kits?cardId=1",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits"
+					],
+					"query": [
+						{
+							"key": "cardId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать пустой набор",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": 1, \r\n    \"name\": \"В космос\" \r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/kits",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список наборов по продуктам",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\": [\r\n        1,\r\n        22\r\n    ]\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/products/kits",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"kits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список продуктов по имени набора",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/v1/kits/search?name=В%20космос",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "В%20космос"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Переименованный набор",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Переименованный набор\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/kits/7",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаления набора",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://bf260e3d-7ee9-4ad9-b90e-077a97dfab50.serverhub.praktikum-services.ru/api/v1/kits/7",
+					"protocol": "https",
+					"host": [
+						"bf260e3d-7ee9-4ad9-b90e-077a97dfab50",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "получить все логи сервера",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/logs/main",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"logs",
+						"main"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить продукты в набор Яндекс.Прилавок",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productsList\": [\r\n        {\r\n            \"id\": 61,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}u/api/v1/kits/5/products",
+					"host": [
+						"{{server_url}}u"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits",
+						"5",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверить наличие продуктов на складах Яндекс.Прилавок",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://162cb118-96e6-4bc0-a349-f6828acc003c.serverhub.praktikum-services.ru/api/v1/warehouses/check",
+					"protocol": "https",
+					"host": [
+						"162cb118-96e6-4bc0-a349-f6828acc003c",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"warehouses",
+						"check"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
